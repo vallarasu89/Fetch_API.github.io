@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.css">
+    <script src="https://kit.fontawesome.com/f2fd496261.js" crossorigin="anonymous"></script>
+    <title>TO DO LIST</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+            <form action="index.html">
+                <div class="input-group" id="namefield">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text"  placeholder="Name" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email"  placeholder="Email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="text"  placeholder="Password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="text"  placeholder="Enter again assword" id="cpassword" name="cpassword" required>
+                </div>
+                <p>Already Signup?<a href="./index.html">Click here</a></p>
+                <div class="btn-feild">
+                    <button onclick="checkRegistration()">Sign Up</button>
+                    <!-- <button type="submit"  id="signinBtn" class="disable">Sign In</button> -->
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+
+        function checkRegistration() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const cpassword = document.getElementById("cpassword").value;
+
+            if (name && email && password && cpassword) {
+                if (password === cpassword) {
+                    alert("Registration successful. Please log");
+                    
+                } else {
+                    alert("Passwords not matching. Please re-enter your password.");
+                }
+            } else {
+                alert("Please fill in all details");
+            }
+        }
+
+        function clearFormFields() {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("cpassword").value = "";
+        }
+    </script>
+
+
+
+</body>
+</html>
